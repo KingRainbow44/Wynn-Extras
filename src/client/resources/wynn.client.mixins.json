@@ -4,6 +4,7 @@
     "package": "moe.seikimo.wynn.mixin",
     "compatibilityLevel": "JAVA_21",
     "client": [
+        "MinecraftMixin",
         "PartyModelMixin"
     ],
     "injectors": {
