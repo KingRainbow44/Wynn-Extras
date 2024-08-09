@@ -3,7 +3,9 @@
     "minVersion": "0.8",
     "package": "moe.seikimo.wynn.mixin",
     "compatibilityLevel": "JAVA_21",
-    "mixins": [
+    "client": [
+        "MinecraftMixin",
+        "PartyModelMixin"
     ],
     "injectors": {
         "defaultRequire": 1

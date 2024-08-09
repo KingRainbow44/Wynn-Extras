@@ -1,6 +1,7 @@
 plugins {
-    id 'fabric-loom' version '1.7-SNAPSHOT'
-    id 'maven-publish'
+    id "maven-publish"
+    id "fabric-loom" version "1.7-SNAPSHOT"
+    id "com.gradleup.shadow" version "${shadow_version}"
 }
 
 version = project.mod_version
@@ -8,17 +9,6 @@ group = project.maven_group
 
 base {
     archivesName = project.archives_base_name
-}
-
-loom {
-    splitEnvironmentSourceSets()
-
-    mods {
-        "wynn" {
-            sourceSet sourceSets.main
-            sourceSet sourceSets.client
-        }
-    }
 }
 
 repositories {
@@ -80,6 +70,16 @@ jar {
     from("LICENSE") {
         rename { "${it}_${project.archivesBaseName}" }
     }
+}
+
+shadowJar {
+    archiveClassifier = "shadow"
+    configurations = [project.configurations.shadow]
+}
+
+remapJar {
+    dependsOn(shadowJar)
+    inputFile = tasks.shadowJar.archiveFile
 }
 
 // configure the maven publication

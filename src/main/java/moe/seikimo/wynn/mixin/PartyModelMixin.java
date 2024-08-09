@@ -18,9 +18,9 @@ import java.util.regex.Pattern;
 
 @Mixin(PartyModel.class)
 public abstract class PartyModelMixin extends Model {
-    @Shadow @Final private static Pattern PARTY_CREATE_SELF;
+    @Shadow(remap = false) @Final private static Pattern PARTY_CREATE_SELF;
 
-    @Shadow @Final private static Pattern PARTY_JOIN_SELF;
+    @Shadow(remap = false) @Final private static Pattern PARTY_JOIN_SELF;
 
     protected PartyModelMixin(List<Model> dependencies) {
         super(dependencies);

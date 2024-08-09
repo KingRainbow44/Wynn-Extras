@@ -3,12 +3,11 @@ package moe.seikimo.wynn.commands;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;
 import moe.seikimo.wynn.utils.Parser;
+import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
 import net.minecraft.text.Text;
 
 import static com.mojang.brigadier.arguments.StringArgumentType.greedyString;
-import static net.fabricmc.fabric.api.client.command.v2.ClientCommandManager.argument;
-import static net.fabricmc.fabric.api.client.command.v2.ClientCommandManager.literal;
 
 public interface DebugCommand {
     /**
@@ -18,9 +17,9 @@ public interface DebugCommand {
      */
     static void register(CommandDispatcher<FabricClientCommandSource> dispatcher) {
         dispatcher.register(
-                literal("debug")
-                        .then(literal("coordinates")
-                                .then(argument("coordinates", greedyString())
+                ClientCommandManager.literal("debug")
+                        .then(ClientCommandManager.literal("coordinates")
+                                .then(ClientCommandManager.argument("coordinates", greedyString())
                                         .executes(DebugCommand::coordinates)))
                         .executes(DebugCommand::invalid)
         );
