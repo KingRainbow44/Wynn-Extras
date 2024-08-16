@@ -1,7 +1,0 @@
-{
-    "magix-wynn.commands.debug.invalid": "Invalid arguments provided. Usage: /debug <coordinates> <value>",
-    "magix-wynn.commands.debug.coordinates": "Parsed coordinates: (%d, %d, %d)",
-    "magix-wynn.commands.debug.coordinates.invalid": "Invalid coordinates provided.",
-
-    "magix-wynn.features.clipboard.added": "Added waypoint (%d, %d, %d) from clipboard!"
-}

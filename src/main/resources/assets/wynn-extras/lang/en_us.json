@@ -1,0 +1,21 @@
+{
+    "wynn-extras.commands.debug.invalid": "Invalid arguments provided. Usage: /debug <coordinates> <value>",
+    "wynn-extras.commands.debug.coordinates": "Parsed coordinates: (%d, %d, %d)",
+    "wynn-extras.commands.debug.coordinates.invalid": "Invalid coordinates provided.",
+    "wynn-extras.commands.debug.log": "Toggled chat-based debug logging.",
+    "wynn-extras.commands.debug.auth": "Attempting to re-authenticate with peers...",
+
+    "wynn-extras.features.clipboard.added": "Added waypoint (%d, %d, %d) from clipboard!",
+
+    "wynn-extras.features.sync.insecure": "[Wynn Extras] Please change the 'room ID' in the mod config.",
+
+    "text.autoconfig.wynn-extras.title": "Wynn Extras",
+    "text.autoconfig.wynn-extras.option.roomId": "Party Sync Room ID",
+    "text.autoconfig.wynn-extras.option.roomId.@Tooltip": "This can be any number, but it cannot be the default value.",
+    "text.autoconfig.wynn-extras.option.enableLog": "Enable Chat Debug Logging",
+    "text.autoconfig.wynn-extras.option.enableLog.@Tooltip": "When enabled, logging info to chat will be toggled on by default.",
+    "text.autoconfig.wynn-extras.option.discovery": "Party Synchronization",
+    "text.autoconfig.wynn-extras.option.discovery.@Tooltip": "The discovery server must be running a JP2P-based server.",
+    "text.autoconfig.wynn-extras.option.discovery.address": "Discovery Server Address",
+    "text.autoconfig.wynn-extras.option.discovery.port": "Discovery Server Port"
+}

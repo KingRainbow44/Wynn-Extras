@@ -22,6 +22,8 @@ repositories {
 
     maven { url "https://jitpack.io" }
     maven { url = "https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1" }
+    maven { url "https://maven.shedaniel.me/" }
+    maven { url "https://maven.terraformersmc.com/releases/" }
 }
 
 dependencies {
@@ -35,6 +37,16 @@ dependencies {
 
     // Wynntils.
     modImplementation "com.wynntils:fabric:${project.wynntils_version}"
+
+    // Java P2P API.
+    shadow(implementation("moe.seikimo:java-p2p:${project.jp2p_version}"))
+    shadow(implementation("com.google.protobuf:protobuf-java:${project.protobuf_version}"))
+
+    // Fabric configuration API.
+    modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_version}") {
+        exclude(group: "net.fabricmc.fabric-api")
+    }
+    modApi "com.terraformersmc:modmenu:${project.modmenu_version}"
 
     compileOnly "org.projectlombok:lombok:1.18.34"
     annotationProcessor "org.projectlombok:lombok:1.18.34"

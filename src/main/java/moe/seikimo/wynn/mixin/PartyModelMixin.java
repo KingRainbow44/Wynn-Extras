@@ -6,6 +6,8 @@ import com.wynntils.core.components.Models;
 import com.wynntils.core.components.Services;
 import com.wynntils.core.text.StyledText;
 import com.wynntils.models.players.PartyModel;
+import moe.seikimo.wynn.features.PartySynchronize;
+import moe.seikimo.wynn.utils.ChatLog;
 import net.minecraft.client.MinecraftClient;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -46,12 +48,16 @@ public abstract class PartyModelMixin extends Model {
         }
 
         if (shouldAuth) {
+            ChatLog.log("Running party re-authenticate with Hades...");
             WynntilsMod.info("Attempting to re-authenticate with Hades (party created/joined)");
 
             // Re-authenticate with the player server.
             Services.Hades.tryDisconnect();
             Services.WynntilsAccount.reauth();
             Models.Player.reset();
+
+            // Additionally broadcast the client's presence to others.
+            PartySynchronize.announceSelf();
         }
     }
 }

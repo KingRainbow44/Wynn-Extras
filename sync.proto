@@ -1,0 +1,39 @@
+syntax = "proto3";
+package sync;
+
+option java_package = "moe.seikimo.wynn";
+option java_outer_classname = "SyncProto";
+
+enum MessageId {
+  SYNC_NOTIFY = 0;
+  WAYPOINT_NOTIFY = 1;
+}
+
+message Identity {
+  string username = 1;
+  string uuid = 2;
+}
+
+message Location {
+  double x = 1;
+  double y = 2;
+  double z = 3;
+}
+
+message WynnMessage {
+  MessageId id = 1;
+  bytes data = 2;
+}
+
+message SyncNotify {
+  Identity identity = 1;
+}
+
+message WaypointNotify {
+  Location location = 1;
+  bool extended = 2;
+
+  // If extended == true, the following are present.
+  uint32 texture = 3;
+  string name = 4;
+}

@@ -74,7 +74,7 @@ public final class ClipboardCoordinates {
         WaypointUtils.createWaypoint(content, location);
         // Log the message to the player.
         MessageUtils.sendMessage(Text.translatable(
-                "magix-wynn.features.clipboard.added",
+                "wynn-extras.features.clipboard.added",
                 coordinates.x, coordinates.y, coordinates.z
         ).formatted(Formatting.YELLOW));
 

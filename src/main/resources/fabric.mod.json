@@ -1,17 +1,20 @@
 {
     "schemaVersion": 1,
-    "id": "magix-wynn",
+    "id": "wynn-extras",
     "version": "1.0",
-    "name": "The Province of Magix",
+    "name": "Wynn Extras",
     "description": "More Wynncraft-related utilities!",
     "authors": ["KingRainbow44"],
     "contact": {},
     "license": "All-Rights-Reserved",
-    "icon": "assets/magix-wynn/icon.png",
+    "icon": "assets/wynn-extras/icon.png",
     "environment": "client",
     "entrypoints": {
         "client": [
             "moe.seikimo.wynn.WynnClient"
+        ],
+        "modmenu": [
+            "moe.seikimo.wynn.screens.ModConfigScreen"
         ]
     },
     "mixins": [
