@@ -17,6 +17,7 @@
             "moe.seikimo.wynn.screens.ModConfigScreen"
         ]
     },
+    "accessWidener": "wynn-extras.accesswidener",
     "mixins": [
         {
             "config": "wynn.mixins.json",

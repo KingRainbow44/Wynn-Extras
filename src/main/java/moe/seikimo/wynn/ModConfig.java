@@ -23,10 +23,30 @@ public final class ModConfig implements ConfigData {
     @ConfigEntry.Gui.Tooltip
     private Discovery discovery = new Discovery();
 
+    @CollapsibleObject
+    private SpellCaster caster = new SpellCaster();
+
+    @CollapsibleObject
+    private AutoClicker autoClicker = new AutoClicker();
+
     @Data
     public static final class Discovery {
         private String address = "127.0.0.1";
         private int port = 4435;
+    }
+
+    @Data
+    public static final class SpellCaster {
+        @ConfigEntry.Gui.Tooltip
+        private int delay = 2;
+    }
+
+    @Data
+    public static final class AutoClicker {
+        private boolean enabled = false;
+
+        @ConfigEntry.Gui.Tooltip
+        private int delay = 5;
     }
 
     @Override
