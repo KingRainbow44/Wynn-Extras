@@ -17,15 +17,13 @@ public abstract class MainMapScreenMixin extends AbstractMapScreen {
             method = "doMouseClicked",
             at = @At(
                     value = "INVOKE",
-                    target = "Lcom/wynntils/models/marker/UserWaypointMarkerProvider;addLocation(Lcom/wynntils/utils/mc/type/Location;Lcom/wynntils/utils/render/Texture;Lcom/wynntils/utils/colors/CustomColor;Lcom/wynntils/utils/colors/CustomColor;Ljava/lang/String;)V"
+                    target = "Lcom/wynntils/models/marker/UserWaypointMarkerProvider;addLocation(Lcom/wynntils/utils/mc/type/Location;Lcom/wynntils/utils/render/Texture;Ljava/lang/String;)V"
             ),
             remap = false
     )
     public void addWaypointLocation(
-            UserWaypointMarkerProvider instance, Location location,
-            Texture texture, CustomColor beaconColor,
-            CustomColor textColor, String additionalText) {
-        instance.addLocation(location, texture, beaconColor, textColor, additionalText);
+            UserWaypointMarkerProvider instance, Location location, Texture texture, String additionalText) {
+        instance.addLocation(location, texture, additionalText);
 
         // At this point, we also want to update the pinged location.
         PartySynchronize.pingLocation(location.x, location.z, texture, additionalText);

@@ -77,7 +77,9 @@ public final class PartySynchronize {
                         .setX(x).setY(0).setZ(z))
                 .setExtended(false)
                 .build();
+
         PartySynchronize.broadcastMessage(MessageId.WAYPOINT_NOTIFY, notify);
+        ChatLog.log("Pinged a location to the P2P server.");
     }
 
     /**
@@ -98,7 +100,9 @@ public final class PartySynchronize {
                 .setTexture(texture.ordinal())
                 .setName(text)
                 .build();
+
         PartySynchronize.broadcastMessage(MessageId.WAYPOINT_NOTIFY, notify);
+        ChatLog.log("Pinged a POI to the P2P server.");
     }
 
     /**
@@ -114,7 +118,9 @@ public final class PartySynchronize {
                         .setUsername(profile.getName())
                         .setUuid(profile.getId().toString()))
                 .build();
+
         PartySynchronize.broadcastMessage(MessageId.SYNC_NOTIFY, notify);
+        ChatLog.log("Announced the client to the P2P server.");
     }
 
     /**
