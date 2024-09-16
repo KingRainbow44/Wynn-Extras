@@ -1,0 +1,12 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "moe.seikimo.wynn.mixin",
+    "compatibilityLevel": "JAVA_21",
+    "client": [
+        "PartyModelMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}
