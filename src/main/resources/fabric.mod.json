@@ -1,0 +1,32 @@
+{
+    "schemaVersion": 1,
+    "id": "wynn",
+    "version": "1.0",
+    "name": "The Province of Magix",
+    "description": "More Wynncraft-related utilities!",
+    "authors": ["KingRainbow44"],
+    "contact": {},
+    "license": "All-Rights-Reserved",
+    "icon": "assets/wynn/icon.png",
+    "environment": "client",
+    "entrypoints": {
+        "client": [
+            "moe.seikimo.wynn.WynnClient"
+        ],
+        "main": [
+            "moe.seikimo.wynn.Wynn"
+        ]
+    },
+    "mixins": [
+        "wynn.mixins.json",
+        {
+            "config": "wynn.client.mixins.json",
+            "environment": "client"
+        }
+    ],
+    "depends": {
+        "fabricloader": ">=0.16.5",
+        "fabric": "*",
+        "minecraft": "1.21"
+    }
+}
